@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>問題に挑戦してみよう</p>
+    <form action="{% url 'djangoapp:quiz_result' %}" method="POST">
+        {% csrf_token %}
+        {% load boost %}
+        {% for i, j in num|zip:question %}
+            <p>問題{{ i }}:{{ j }}</p>
+            <input type="text" name="user_answer" size="10">            
+        {% endfor %}
+        {% for k in answer %}
+            <input type="hidden" name="answer" value="{{ k }}">
+        {% endfor %}
+        <input type="submit" value="送信">
+    </form>
+    <p></p>
+    <a href="/">最初へ戻る</a>
+</body>
+</html>

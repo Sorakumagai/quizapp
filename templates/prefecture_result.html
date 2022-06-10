@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>結果は...<strong>{{ result }}</strong>でした！</p>
+    <ul>
+        <li>
+            <p>{{ prefecture }}の県庁所在地は<strong>{{ city }}</strong>です。</p>
+        </li>
+        <li>
+            <p>
+                {{ prefecture }}のHPは
+                <a href="{{ url }}" target="_blank" rel="noopener noreferrer">こちら</a>
+            </p>
+        </li>
+    </ul>
+    <a href="/">最初に戻る</a>
+</body>
+</html>
